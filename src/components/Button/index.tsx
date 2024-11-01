@@ -1,27 +1,34 @@
+import styles from "./styles.module.css";
+
 interface ButtonProps {
-    placeholder: string;
-    color: string;
-    onClick: () => void;
+  value: string;
+  type: "submit" | "button";
+  onClick?: () => void;
+  disabled?: boolean;
+  role: "primary" | "secondary";
 }
 
-const Button: React.FC<ButtonProps> = ({ placeholder, color, onClick }) => {
-    return (
-        <button
-            style={{
-                backgroundColor: color,
-                color: '#fff',
-                border: 'none',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-            }}
-            onClick={onClick}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#555')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = color)}
-        >
-            {placeholder}
-        </button>
-    );
+const Button: React.FC<ButtonProps> = ({
+  value,
+  onClick,
+  type,
+  disabled,
+  role,
+}) => {
+  return (
+    <button
+      style={{
+        backgroundColor: role === "primary" ? "#00c698" : "#9f9f9f",
+        color: role === "primary" ? "#fff" : "#00c698",
+      }}
+      type={type}
+      className={styles.button}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {value}
+    </button>
+  );
 };
 
 export default Button;

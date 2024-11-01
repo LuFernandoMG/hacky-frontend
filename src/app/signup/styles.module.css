@@ -10,13 +10,12 @@
 }
 
 .logo {
-  /* Estilos para el logo */
-  width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+  display: flex; /* Ajusta el tamaño del logo según sea necesario */
   margin-bottom: 0.2rem;
 }
 
 .title {
-  color: #ffffff;
+  color: #50a78d;
   font-size: 1.8rem; /* Tamaño de fuente más grande */
   margin-bottom: 2rem;
   text-align: center; /* Centra el texto */
@@ -29,26 +28,6 @@
   max-width: 400px; /* Ancho máximo del formulario */
 }
 
-.inputGroup {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.label {
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  font-weight: bold; /* Texto en negrita */
-  
-}
-
-.input {
-  padding: 0.8rem; /* Más espacio interno */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #1f2937; /* Color de fondo del input */
-  color: #ffffff; /* Color del texto del input */
-  width: 400px; /* Ajusta el ancho según el botón */
-}
 
 .button {
   background-color: #00c698;

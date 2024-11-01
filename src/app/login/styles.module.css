@@ -5,13 +5,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
   padding: 20px; /* Espacio interno */
 }
 
 .logo {
   /* Estilos para el logo */
-  width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+  display: flex; /* Ajusta el tamaño del logo según sea necesario */
   margin-bottom: 2rem;
 }
 
@@ -19,6 +18,7 @@
   color: #ffffff;
   font-size: 1.8rem; /* Tamaño de fuente más grande */
   margin-bottom: 2rem;
+  margin-top: 2rem;
   text-align: center; /* Centra el texto */
 }
 
@@ -27,27 +27,6 @@
   flex-direction: column;
   width: 90%; /* Ancho del formulario */
   max-width: 400px; /* Ancho máximo del formulario */
-}
-
-.inputGroup {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.label {
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  font-weight: bold; /* Texto en negrita */
-  
-}
-
-.input {
-  padding: 0.8rem; /* Más espacio interno */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #1f2937; /* Color de fondo del input */
-  color: #ffffff; /* Color del texto del input */
-  width: 400px; /* Ajusta el ancho según el botón */
 }
 
 .button {
@@ -61,23 +40,17 @@
   font-weight: bold; /* Texto en negrita */
 }
 
-.socialLogin {
-  margin-top: 2rem;
-  color: #ffffff;
-  text-align: center; /* Centra el texto */
+.signupLink {
+  color: white;
+  margin-top: 3rem;
+  font-style: italic;
 }
 
-.socialLogin p {
-  margin-bottom: 1rem;
+.signupLink a {
+  color: #50a78d;
+  text-decoration: none;
 }
 
-/* Estilos para los botones de redes sociales (puedes ajustarlos según tu diseño) */
-.socialLogin button {
-  background-color: #1f2937; /* Color de fondo de los botones */
-  color: #ffffff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0 0.5rem; /* Espacio entre botones */
+.signupLink a:hover {
+  text-decoration: underline;
 }

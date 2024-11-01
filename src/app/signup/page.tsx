@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 
-function LoginForm() {
+function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -40,4 +40,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignupForm;
