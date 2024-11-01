@@ -1,0 +1,35 @@
+.wrapper {
+    width: 100%;
+    margin: 0px auto 20px;
+}
+
+.label {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
+    display: block;
+}
+
+.help {
+    color: #d5d5d5;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input {
+    padding: 0.8rem;
+    border: 1px solid #2c735d;
+    border-radius: 4px;
+    background-color: #1f2937;
+    color: #ffffff;
+    width: 100%;
+}
+
+.input:disabled {
+    border: 1px solid #ccc;
+}
+
+.input:active, .input:focus {
+    border: 1px solid #50a78d
+}

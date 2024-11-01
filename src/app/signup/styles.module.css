@@ -4,21 +4,50 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 110vh;
+  height: auto;
   background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
   padding: 20px; /* Espacio interno */
 }
 
 .logo {
   display: flex; /* Ajusta el tamaño del logo según sea necesario */
-  margin-bottom: 0.2rem;
+  margin: 3rem;
 }
 
 .title {
-  color: #50a78d;
+  color: #FFF;
   font-size: 1.8rem; /* Tamaño de fuente más grande */
-  margin-bottom: 2rem;
+  margin: 2rem;
   text-align: center; /* Centra el texto */
+}
+
+.signupLink {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.signupLink a {
+  color: #50a78d;
+  text-decoration: none;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+.formContainer {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 6rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px #50a78d60;
+  align-items: center;
+  border: 1px solid #7d978f;
 }
 
 .form {
@@ -28,35 +57,19 @@
   max-width: 400px; /* Ancho máximo del formulario */
 }
 
-
-.button {
-  background-color: #00c698;
-  color: #ffffff;
-  padding: 1rem 2rem; /* Más espacio interno */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1.1rem; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Texto en negrita */
+.logo {
+  /* Estilos para el logo */
+  display: flex; /* Ajusta el tamaño del logo según sea necesario */
+  margin-bottom: 2rem;
 }
 
-.socialLogin {
-  margin-top: 2rem;
-  color: #ffffff;
-  text-align: center; /* Centra el texto */
+.agreements {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #50a78d60;
 }
 
-.socialLogin p {
-  margin-bottom: 1rem;
-}
-
-/* Estilos para los botones de redes sociales (puedes ajustarlos según tu diseño) */
-.socialLogin button {
-  background-color: #1f2937; /* Color de fondo de los botones */
-  color: #ffffff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0 0.5rem; /* Espacio entre botones */
+.agreements div {
+  width: 32px;
 }

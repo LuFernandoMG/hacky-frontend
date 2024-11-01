@@ -1,27 +1,26 @@
 import styles from "./styles.module.css";
 
-interface InputTextProps {
+interface InputTextArea {
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
-  type?: string;
   id?: string;
   title?: string;
 }
 
-const InputText: React.FC<InputTextProps> = ({
+const TextArea: React.FC<InputTextArea> = ({
   value,
   onChange,
   title,
   placeholder,
-  type = "text",
   id = "",
 }) => {
   return (
     <div className={styles.wrapper}>
       {title && <label className={styles.label} htmlFor={id}>{title}</label>}
-      <input
-        type={type}
+      <textarea
+        maxLength={500}
+        rows={5}
         id={id}
         placeholder={placeholder}
         value={value}
@@ -32,4 +31,4 @@ const InputText: React.FC<InputTextProps> = ({
   );
 };
 
-export default InputText;
+export default TextArea;
