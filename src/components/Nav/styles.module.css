@@ -1,0 +1,48 @@
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem; /* Ajusta el padding para alinearlo mejor */
+    background-color: #0a0a0a; /* Fondo oscuro */
+    width: 200px;
+    height: 100vh;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem; /* Espacio entre el logo y la lista de navegación */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #ededed;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-icon {
+    font-size: 0.8rem; /* Reduce el tamaño del icono */
+    margin-right: 0.8rem; /* Ajusta el espacio entre el icono y el texto */
+  }
+  
+  .nav-item:hover {
+    color: #1db954; /* Color verde al pasar el cursor */
+  }
+  
+  .nav-item span {
+    font-size: 0.9rem;
+  }
+  

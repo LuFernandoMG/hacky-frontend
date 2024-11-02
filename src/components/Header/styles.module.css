@@ -1,0 +1,32 @@
+
+
+.header {
+    width: 100%;
+    background-color: var(--foreground);
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+  }
+  
+  .header-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    /*padding: -100px;*/
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  
