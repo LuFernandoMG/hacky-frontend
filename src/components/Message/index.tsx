@@ -17,7 +17,7 @@ interface MessageProps {
 }
 
 const Message: React.FC<MessageProps> = ({ user, message, timestamp}) => {
-    const isCurrentUser = user.id === 1;
+    const isCurrentUser = user.id === 2;
 
     return (
         <div className={isCurrentUser ? styles.messageContainerUser : styles.messageContainerOther}>

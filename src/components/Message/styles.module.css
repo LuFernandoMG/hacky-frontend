@@ -35,10 +35,14 @@
 }
 
 .messageContainerUser .messageContent {
-    background-color: #dcf8c6;
+    background-color: #8fe0c7;
 }
 
 .messageContainerUser .avatar {
+    display: none;
+}
+
+.messageContainerUser .userName {
     display: none;
 }
 
@@ -46,6 +50,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+}
+
+.messageContainerUser .messageHeader {
+    justify-content: flex-end;
 }
 
 .userName {
