@@ -12,6 +12,30 @@
   border: 1px solid #1f3249;
 }
 
+.ratings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.projectCard h4 {
+  margin-top: 2rem;
+}
+
+.urls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .projectCard:hover {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   border: 1px solid #00c698;

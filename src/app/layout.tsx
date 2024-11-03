@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Header from "../components/Header"; // Importar el Header
 import Nav from "../components/Nav";
 import "./globals.css";
+import '@smastrom/react-rating/style.css'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
