@@ -115,8 +115,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, old }) => {
           <>
             <h4>Trabajo realizado</h4>
             <div className={styles.urls}>
-              {project.urls.map((url) => (
-                <UrlButton url={url} />
+              {project.urls.map((url, idx) => (
+                <UrlButton key={idx} url={url} />
               ))}
             </div>
           </>

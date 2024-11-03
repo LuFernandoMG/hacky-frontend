@@ -1,0 +1,108 @@
+.main {
+  display: flex;
+  gap: 1rem;
+  overflow-y: scroll;
+  height: calc(100% - 40px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #1f3249;
+  color: white;
+  margin: 20px;
+  width: calc(100% - 40px);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+}
+
+.leftColumn h2 {
+  display: flex;
+  align-items: center;
+}
+
+.rightColumn {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 40%;
+}
+
+.submission {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submission button {
+    max-width: 200px;
+}
+
+.chatWindow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.chatHeader {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: #00000066;
+}
+
+.chatHeader img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chatInput {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: .5rem;
+    background-color: #00000066;
+}
+
+.chatInput input {
+    border: none;
+    padding: .5rem;
+    width: calc(100% - 40px);
+    border-radius: 5px 0 0 5px;
+}
+
+.chatMessages {
+    height: calc(100% - 32px - 40px - 2rem);
+    width: 100%;
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.chatInput button {
+    border: none;
+    background-color: white;
+    color: #50a78d;
+    height: 32px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    font-size: 1.3rem;
+}
+
+.chatContainer {
+    background-color: #00000033;
+    height: 80%;
+    width: 28%;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
