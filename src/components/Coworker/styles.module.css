@@ -1,0 +1,23 @@
+.coworkersWrapper {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.coworker {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coworkerImage {
+    border-radius: 50%;
+}
+
+.coworkerName {
+    font-weight: bold;
+}
+
+.coworkerRole {
+    color: #50a78d;
+}

@@ -1,7 +1,6 @@
 .button {
     background-color: #00c698;
     color: #ffffff;
-    padding: 1rem 2rem; /* Más espacio interno */
     border: none;
     border-radius: 4px;
     cursor: pointer;

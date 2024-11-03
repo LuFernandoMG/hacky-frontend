@@ -4,6 +4,7 @@
     width: 100%;
     background-color: var(--foreground);
     padding: 1rem 1.2rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Alinea el contenido al inicio */

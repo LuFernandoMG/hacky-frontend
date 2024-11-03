@@ -6,6 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   role: "primary" | "secondary";
+  sm?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,12 +15,13 @@ const Button: React.FC<ButtonProps> = ({
   type,
   disabled,
   role,
+  sm
 }) => {
   return (
     <button
       style={{
         backgroundColor: role === "primary" ? "#00c698" : "#9f9f9f",
-        color: role === "primary" ? "#fff" : "#00c698",
+        padding: sm ? '.5rem 1rem' : '1rem 2rem',
       }}
       type={type}
       className={styles.button}

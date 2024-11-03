@@ -1,0 +1,13 @@
+.page {
+    overflow-y: scroll;
+}
+
+.main {
+    padding: 20px;
+}
+
+.main h1 {
+    margin: 20px;
+    margin-bottom: 4rem;
+    color: white;
+}
