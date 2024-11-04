@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Modal from '@/components/Modal';
 import Pill from "@/components/Pill";
 import Tags from "@/components/Tags";
 import ProjectSteps from "@/components/ProjectSteps";
@@ -95,6 +96,8 @@ const chatMessages = [
 export default function Project() {
   const [messages, setMessages] = useState(chatMessages)
   const [inputValue, setInputValue] = useState('');
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [ready, setReady] = useState<boolean>(false)
 
   const project = {
     id: 1,
@@ -196,7 +199,7 @@ export default function Project() {
     setMessages([...messages, {
       id: messages[messages.length - 1].id + 1,
       user: {
-        id: 1,
+        id: 2,
         name: "John",
         last_name: "Doe",
         role: "Frontend developer",
@@ -208,6 +211,19 @@ export default function Project() {
     },]);
     setInputValue('');
   };
+
+  const submitProject = () => {
+    setShowModal(true);
+  }
+
+  const handleClose = () => {
+    setShowModal(false);
+    setReady(false);
+  }
+
+  const handleReady = () => {
+    setReady(true);
+  }
 
   return (
     <div className={styles.page}>
@@ -231,7 +247,7 @@ export default function Project() {
           <p>{project.description}</p>
           <ProjectSteps steps={project.steps} handleChange={onCheckboxChange} />
           <div className={styles.submission}>
-            <Button value="Enviar project" role="primary" type="button" />
+            <Button value="Enviar project" onClick={submitProject} role="primary" type="button" />
           </div>
         </div>
         <div className={styles.rightColumn}>
@@ -271,6 +287,7 @@ export default function Project() {
           </div>
         </div>
       </main>
+      {showModal && <Modal onClose={handleClose} getReady={handleReady} ready={ready} project={project} />}
     </div>
   );
 }

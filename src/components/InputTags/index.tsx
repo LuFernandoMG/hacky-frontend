@@ -19,7 +19,6 @@ const InputTags: React.FC<InputTagsProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log("I entered here con key ", e.key);
     if (e.key === "Enter" && inputValue.trim() !== "" && tags.length < limit) {
       setTags([...tags, inputValue]);
       setInputValue("");

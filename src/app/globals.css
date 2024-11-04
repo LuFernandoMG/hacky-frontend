@@ -1,12 +1,12 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: white;
   background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,10 +39,4 @@ a {
   display: flex;
   width: 100%;
   height: calc(100vh - 4rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
