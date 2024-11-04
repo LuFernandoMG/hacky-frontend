@@ -6,13 +6,13 @@ import Rating from "../Rating";
 import TextArea from "../TextArea";
 
 interface ModalProps {
-  project: any;
+  projectId: number;
   ready: boolean;
   onClose: () => void;
   getReady: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ ready, getReady, project, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) => {
   const [communication, setCommunication] = useState(0);
   const [teamWork, setTeamWork] = useState(0);
   const [execution, setExecution] = useState(0);
@@ -40,6 +40,7 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, project, onClose }) => {
   };
 
   const submit = () => {
+    console.log('project id ', projectId)
     onClose();
   }
 

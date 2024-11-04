@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 interface User {
@@ -22,7 +22,7 @@ const Message: React.FC<MessageProps> = ({ user, message, timestamp}) => {
     return (
         <div className={isCurrentUser ? styles.messageContainerUser : styles.messageContainerOther}>
             <div className={styles.avatar}>
-                <img src={user.avatar} alt={`${user.name} ${user.last_name}`} />
+                <Image src={user.avatar} width={32} height={32} alt={`${user.name} ${user.last_name}`} />
             </div>
             <div className={styles.messageContent}>
                 <div className={styles.messageHeader}>

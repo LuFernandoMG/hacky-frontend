@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 import Button from "@/components/Button";
 import Message from "@/components/Message";
 import { MdSend } from "react-icons/md";
+import Image from 'next/image';
 
 const chatMessages = [
   {
@@ -254,9 +255,11 @@ export default function Project() {
           <div className={styles.chatWindow}>
             <div className={styles.chatContainer}>
               <div className={styles.chatHeader}>
-                <img
+                <Image
                   src={project.users[0].avatar}
                   alt={`${project.users[0].name} ${project.users[0].last_name}`}
+                  width={40}
+                  height={40}
                 />
                 <div>
                   <strong>
@@ -287,7 +290,7 @@ export default function Project() {
           </div>
         </div>
       </main>
-      {showModal && <Modal onClose={handleClose} getReady={handleReady} ready={ready} project={project} />}
+      {showModal && <Modal onClose={handleClose} getReady={handleReady} ready={ready} projectId={project.id} />}
     </div>
   );
 }
