@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import styles from "./styles.module.css";
 import Tags from "../Tags";
@@ -54,7 +55,7 @@ const InputTags: React.FC<InputTagsProps> = ({
           onChange={(e) => setInputValue(e.target.value)}
           className={styles.input}
         />
-        <button type="button" onClick={addTag}>+</button>
+        <button type="button" onTouchEnd={addTag} onClick={addTag}>+</button>
       </div>
       <Tags tags={tags} deleteTag={handleRemoveTag} bubbleColor="#3bc277" />
     </div>
