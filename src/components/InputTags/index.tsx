@@ -19,7 +19,7 @@ const InputTags: React.FC<InputTagsProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && inputValue.trim() !== "" && tags.length < limit) {
+    if ((e.key === "Enter" || e.key === 'Tab' || e.key === ',') && inputValue.trim() !== "" && tags.length < limit) {
       setTags([...tags, inputValue]);
       setInputValue("");
     }
@@ -34,7 +34,7 @@ const InputTags: React.FC<InputTagsProps> = ({
       <label className={styles.label}>{title}</label>
       <span
         className={styles.help}
-      >{`Presiona enter para agregar (Max: ${limit})`}</span>
+      >{`Presiona "Enter", "Tab" o "," para agregar (Max: ${limit})`}</span>
       <input
         disabled={tags.length >= limit}
         type="text"

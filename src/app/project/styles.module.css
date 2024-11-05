@@ -1,9 +1,13 @@
+.page {
+    height: calc(100vh - 4rem);
+}
+
 .main {
   display: flex;
   gap: 1rem;
   overflow-y: scroll;
   scrollbar-color: #0a0a0a33 #1f3249 !important;
-  height: calc(100vh - 40px);
+  height: calc(100% - 40px);
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #1f3249;
