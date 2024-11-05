@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
@@ -10,12 +11,32 @@ import Image from "next/image";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault(); // Evita que la página se recargue
-    // Aquí iría la lógica para enviar los datos al backend
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      fetch("https://asterion.casa/api/v1/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          name: 'iphone'
+        }),
+      }).then((response) => {
+        if (response.ok) {
+          console.log("Usuario logueado con éxito");
+          router.push("/");
+        } else {
+          console.error("Error al iniciar sesión");
+        }
+      })
+    } catch (error) {
+      console.error("Error al iniciar sesión: ", error);
+    }
   };
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Input from "@/components/Input";
@@ -23,19 +24,40 @@ function SignupForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [checkbox, setCheckbox] = useState<boolean>(false);
 
+  const router = useRouter();
+
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     // Aquí iría la lógica para enviar los datos al backend
-    console.log('name ', name);
-    console.log('LastName ', lastName);
-    console.log('country ', country);
-    console.log('biography ', biography);
-    console.log('interests ', interests);
-    console.log('skills ', skills);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Confirm Password:", confirmPassword);
-    console.log("checkbox:", checkbox);
+    try {
+      fetch("https://asterion.casa/api/v1/learners/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          last_name: lastName,
+          country,
+          biography,
+          interests,
+          skills,
+          email,
+          password,
+          password_confirmation: confirmPassword,
+          experience_level: "beginner",
+        }),
+      }).then((response) => {
+        if (response.ok) {
+          console.log("Usuario registrado con éxito");
+          router.push("/");
+        } else {
+          console.error("Error al registrar el usuario");
+        }
+      });
+    } catch (error) {
+      console.error("Error al registrar el usuario: ", error);
+    }
   };
 
   return (
