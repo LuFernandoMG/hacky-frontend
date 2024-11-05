@@ -88,6 +88,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, old }) => {
                 <span>Ejecución</span>
                 <Rating value={project.users[0].execution} readOnly />
               </div>
+              <div className={styles.rating}>
+                <span>Liderazgo</span>
+                <Rating value={project.users[0].execution} readOnly />
+              </div>
+              <div className={styles.rating}>
+                <span>Gestión del tiempo</span>
+                <Rating value={project.users[0].execution} readOnly />
+              </div>
             </div>
           </>
         )}

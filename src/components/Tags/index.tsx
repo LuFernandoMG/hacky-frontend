@@ -1,3 +1,4 @@
+import styles from './styles.module.css';
 interface TagsProps {
     bubbleColor: string;
     tags: string[];
@@ -6,7 +7,7 @@ interface TagsProps {
 
 const Tags: React.FC<TagsProps> = ({ tags, deleteTag, bubbleColor }) => {
     return (
-        <div>
+        <div className={styles.tagsDiv}>
             <div style={{ marginTop: '10px' }}>
                 {tags.map((tag, index) => (
                     <span

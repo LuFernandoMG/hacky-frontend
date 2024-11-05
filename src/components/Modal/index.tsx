@@ -17,6 +17,8 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) =>
   const [communication, setCommunication] = useState(0);
   const [teamWork, setTeamWork] = useState(0);
   const [execution, setExecution] = useState(0);
+  const [leadership, setLeadership] = useState(0);
+  const [timeMgt, setTimeMgt] = useState(0);
   const [url, setUrl] = useState("");
   const [commentFeedback, setCommentFeedback] = useState("");
   const [commentSubmission, setCommentSubmission] = useState("");
@@ -31,6 +33,12 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) =>
   };
   const handleExecution = (value: number) => {
     setExecution(value);
+  };
+  const handleLeadership = (value: number) => {
+    setLeadership(value);
+  };
+  const handleTimeMgt = (value: number) => {
+    setTimeMgt(value);
   };
   const handleUrl = (e: { target: { value: string } }) => {
     setUrl(e.target.value);
@@ -70,6 +78,14 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) =>
                 <div className={styles.feedback}>
                   <Rating value={teamWork} setRating={handleTeamWork} />
                   <span>Trabajo en equipo</span>
+                </div>
+                <div className={styles.feedback}>
+                  <Rating value={leadership} setRating={handleLeadership} />
+                  <span>Liderazgo</span>
+                </div>
+                <div className={styles.feedback}>
+                  <Rating value={timeMgt} setRating={handleTimeMgt} />
+                  <span>Gestión del tiempo</span>
                 </div>
                 <TextArea
                   value={commentFeedback}
