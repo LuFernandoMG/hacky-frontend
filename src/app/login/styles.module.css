@@ -6,6 +6,7 @@
   justify-content: center;
   height: 100vh;
   padding: 20px; /* Espacio interno */
+  width: 100%;
 }
 
 .logo {

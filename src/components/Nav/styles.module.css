@@ -4,7 +4,8 @@
     padding: 1.5rem 1rem; /* Ajusta el padding para alinearlo mejor */
     background-color: #00000033;
     min-width: 300px;
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
+    max-height: 100vh;
     align-items: flex-start; /* Alinea los elementos a la izquierda */
   }
   

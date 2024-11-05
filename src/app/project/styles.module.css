@@ -2,7 +2,7 @@
   display: flex;
   gap: 1rem;
   overflow-y: scroll;
-  height: calc(100% - 40px);
+  height: calc(100vh - 40px);
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #1f3249;

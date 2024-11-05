@@ -7,6 +7,7 @@
   height: auto;
   background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
   padding: 20px; /* Espacio interno */
+  width: 100%;
 }
 
 .logo {
