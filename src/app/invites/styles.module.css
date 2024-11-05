@@ -1,14 +1,15 @@
 .page {
-    overflow-y: scroll;
-    height: calc(100vh - 4rem);
+  overflow-y: scroll;
+  scrollbar-color: #0a0a0a33 #1f3249 !important;
+  height: calc(100vh - 4rem);
 }
 
 .main {
-    padding: 20px;
+  padding: 20px;
 }
 
 .main h1 {
-    margin: 20px;
-    margin-bottom: 4rem;
-    color: white;
+  margin: 20px;
+  margin-bottom: 4rem;
+  color: white;
 }
