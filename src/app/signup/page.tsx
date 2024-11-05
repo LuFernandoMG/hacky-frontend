@@ -17,8 +17,8 @@ function SignupForm() {
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("Argentina");
   const [biography, setBiography] = useState("");
-  const [interests, setInterests] = useState([]);
-  const [skills, setSkills] = useState([]);
+  const [interests, setInterests] = useState<string[]>([]);
+  const [skills, setSkills] = useState<string[]>([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -26,7 +26,7 @@ function SignupForm() {
 
   const router = useRouter();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       fetch("https://asterion.casa/api/v1/learners/register", {
@@ -98,13 +98,13 @@ function SignupForm() {
             limit={5}
             placeholder="I.E. Programación, Diseño, Marketing"
             tags={interests}
-            setTags={setInterests}
+            setTags={(tags: string[]) => setInterests(tags)}
           />
           <InputTags
             title="Habilidades"
             limit={15}
             tags={skills}
-            setTags={setSkills}
+            setTags={(tags: string[]) => setSkills(tags)}
             placeholder="I.E. JavaScript, React, Node.js"
           />
           <Input
