@@ -124,6 +124,76 @@
     }
 
     .rightColumn {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 100vw;
+        height: 100vh;
+        background-color: #1f324999;
+        backdrop-filter: blur(4px);
+        transition: all ease 0.5s;
+    }
+
+    .chatButton {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #50a78d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        border: none;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .chatButtonActive {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: #50a78d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        border: none;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .submission {
+        display: flex;
+        justify-content: space-between  ;
+        align-items: center;
+    }
+    
+    .rightColumnActive {
+        transition: all ease 0.5s;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #1f324999;
+        backdrop-filter: blur(4px);
+    }
+
+    .chatWindow {
+        position: relative;
         width: 100%;
+        height: 100%;
+    }
+
+    .chatContainer {
+        width: 100%;
+        height: 100%;
     }
 }

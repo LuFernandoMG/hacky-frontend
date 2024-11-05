@@ -8,7 +8,7 @@ import ProjectSteps from "@/components/ProjectSteps";
 import styles from "./styles.module.css";
 import Button from "@/components/Button";
 import Message from "@/components/Message";
-import { MdSend } from "react-icons/md";
+import { MdSend, MdChat, MdClose } from "react-icons/md";
 import Image from "next/image";
 
 const chatMessages = [
@@ -96,6 +96,7 @@ const chatMessages = [
 ];
 
 export default function Project() {
+  const [activeChat, setActiveChat] = useState<boolean>(false);
   const [messages, setMessages] = useState(chatMessages);
   const [inputValue, setInputValue] = useState("");
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -241,6 +242,12 @@ export default function Project() {
     }
   }
 
+  const handleChat = () => {
+    setActiveChat(!activeChat);
+  }
+
+  const isMobile = (typeof window !== "undefined") && window.innerWidth < 768;
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -263,6 +270,11 @@ export default function Project() {
           <p>{project.description}</p>
           <ProjectSteps steps={project.steps} handleChange={onCheckboxChange} />
           <div className={styles.submission}>
+            {isMobile && (
+              <button onClick={handleChat} className={activeChat ? styles.chatButtonActive : styles.chatButton} type="button">
+                {activeChat ? <MdClose /> : <MdChat />}
+              </button>
+            )}
             <Button
               value="Enviar project"
               onClick={submitProject}
@@ -271,7 +283,7 @@ export default function Project() {
             />
           </div>
         </div>
-        <div className={styles.rightColumn}>
+        <div className={activeChat ? styles.rightColumnActive : styles.rightColumn}>
           <div className={styles.chatWindow}>
             <div className={styles.chatContainer}>
               <div className={styles.chatHeader}>
