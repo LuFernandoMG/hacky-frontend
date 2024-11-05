@@ -28,8 +28,9 @@ const InputTags: React.FC<InputTagsProps> = ({
       setTags([...tags, inputValue]);
       setInputValue("");
     }
+    e.preventDefault();
   };
-
+  
   const addTag = () => {
     setTags([...tags, inputValue]);
     setInputValue("");
@@ -55,7 +56,7 @@ const InputTags: React.FC<InputTagsProps> = ({
           onChange={(e) => setInputValue(e.target.value)}
           className={styles.input}
         />
-        <button type="button" onTouchEnd={addTag} onClick={addTag}>+</button>
+        <button type="button" onClick={addTag}>+</button>
       </div>
       <Tags tags={tags} deleteTag={handleRemoveTag} bubbleColor="#3bc277" />
     </div>
