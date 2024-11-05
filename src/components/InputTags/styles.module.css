@@ -33,3 +33,18 @@
 .input:active, .input:focus {
     border: 1px solid #50a78d
 }
+
+.inputTags {
+    display: flex;
+    gap: 5px;
+}
+
+.inputTags button {
+    border: none;
+    background-color: #50a78d;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 24px;
+    color: white;
+    width: 40px
+}

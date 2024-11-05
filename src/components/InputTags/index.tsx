@@ -19,11 +19,20 @@ const InputTags: React.FC<InputTagsProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if ((e.key === "Enter" || e.key === 'Tab' || e.key === ',') && inputValue.trim() !== "" && tags.length < limit) {
+    if (
+      (e.key === "Enter" || e.key === "Tab" || e.key === ",") &&
+      inputValue.trim() !== "" &&
+      tags.length < limit
+    ) {
       setTags([...tags, inputValue]);
       setInputValue("");
     }
   };
+
+  const addTag = () => {
+    setTags([...tags, inputValue]);
+    setInputValue("");
+  }
 
   const handleRemoveTag = (index: number) => {
     setTags(tags.filter((_, i) => i !== index));
@@ -35,15 +44,18 @@ const InputTags: React.FC<InputTagsProps> = ({
       <span
         className={styles.help}
       >{`Presiona "Enter", "Tab" o "," para agregar (Max: ${limit})`}</span>
-      <input
-        disabled={tags.length >= limit}
-        type="text"
-        onKeyDown={handleKeyDown}
-        placeholder={placeholder}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        className={styles.input}
-      />
+      <div className={styles.inputTags}>
+        <input
+          disabled={tags.length >= limit}
+          type="text"
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          className={styles.input}
+        />
+        <button type="button" onClick={addTag}>+</button>
+      </div>
       <Tags tags={tags} deleteTag={handleRemoveTag} bubbleColor="#3bc277" />
     </div>
   );
