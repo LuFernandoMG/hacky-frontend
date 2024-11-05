@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./styles.module.css"; // Assuming you have some basic styles for the modal
 import Button from "../Button";
 import InputText from "../Input";
@@ -19,6 +20,8 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) =>
   const [url, setUrl] = useState("");
   const [commentFeedback, setCommentFeedback] = useState("");
   const [commentSubmission, setCommentSubmission] = useState("");
+
+  const router = useRouter();
 
   const handleCommunication = (value: number) => {
     setCommunication(value);
@@ -41,6 +44,7 @@ const Modal: React.FC<ModalProps> = ({ ready, getReady, projectId, onClose }) =>
 
   const submit = () => {
     console.log('project id ', projectId)
+    router.push('/history')
     onClose();
   }
 

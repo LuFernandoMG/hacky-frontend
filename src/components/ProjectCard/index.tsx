@@ -6,6 +6,7 @@ import Pill from "../Pill";
 import UrlButton from "../UrlButton";
 import Tags from "../Tags";
 import styles from "./styles.module.css";
+import { useRouter } from "next/navigation";
 
 type Project = {
   title: string;
@@ -47,6 +48,11 @@ const enterFunc = () => {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, old }) => {
+  const router = useRouter();
+
+  const acceptProject = () => {
+    router.push('/project')
+  }
   return (
     <div onMouseEnter={enterFunc} className={styles.projectCard}>
       <div className={styles.leftColumn}>
@@ -88,7 +94,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, old }) => {
         {!old && (
           <div className={styles.projectButtons}>
             <Button sm type="button" value="Rechazar" role="secondary" />
-            <Button sm type="button" value="Aceptar" role="primary" />
+            <Button sm type="button" value="Aceptar" onClick={acceptProject} role="primary" />
           </div>
         )}
       </div>
