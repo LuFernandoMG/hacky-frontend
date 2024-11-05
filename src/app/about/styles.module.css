@@ -1,16 +1,129 @@
 .page {
-    padding: 20px;
-    max-height: calc(100vh - 40px);
+  padding: 20px;
+  max-height: calc(100vh - 40px);
 }
 
+/* Estilos generales */
 .main {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   height: 100%;
-  padding: 3rem;
+  padding: 2rem;
   text-align: justify;
   border-radius: 0.5rem;
   background-color: #1f3249;
-  flex-direction: column;
   overflow-y: scroll;
+}
+
+
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+  .main {
+      padding: 3rem;
+  }
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .main {
+      padding: 2rem;
+      font-size: 1rem;
+  }
+}
+/* Estilos generales en la clase .main */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  padding: 2rem;
+  text-align: justify;
+  border-radius: 0.5rem;
+  background-color: #1f3249;
+  overflow-y: scroll;
+}
+
+/* Estilos específicos aplicados mediante clases */
+.title {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+  .main {
+      padding: 3rem;
+  }
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .main {
+      padding: 2rem;
+  }
+
+  .title {
+      font-size: 1.8rem;
+  }
+
+  .subtitle {
+      font-size: 1.4rem;
+  }
+
+  .paragraph {
+      font-size: 1rem;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .page {
+      padding: 10px;
+  }
+
+  .main {
+      padding: 1.5rem;
+  }
+
+  .title {
+      font-size: 1.6rem;
+  }
+
+  .subtitle {
+      font-size: 1.2rem;
+  }
+
+  .paragraph {
+      font-size: 0.9rem;
+      line-height: 1.4;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .main {
+      padding: 1rem;
+  }
+
+  .title {
+      font-size: 1.4rem;
+  }
+
+  .subtitle {
+      font-size: 1rem;
+  }
+
+  .paragraph {
+      font-size: 0.85rem;
+      line-height: 1.4;
+  }
 }

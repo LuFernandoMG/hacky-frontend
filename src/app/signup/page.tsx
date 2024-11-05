@@ -17,18 +17,17 @@ function SignupForm() {
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("Argentina");
   const [biography, setBiography] = useState("");
-  const [interests, setInterests] = useState<string[]>([]);
-  const [skills, setSkills] = useState<string[]>([]);
+  const [interests, setInterests] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [checkbox, setCheckbox] = useState<boolean>(false);
+  const [checkbox, setCheckbox] = useState(false);
 
   const router = useRouter();
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí iría la lógica para enviar los datos al backend
     try {
       fetch("https://asterion.casa/api/v1/learners/register", {
         method: "POST",
@@ -86,7 +85,7 @@ function SignupForm() {
           <CountrySelect
             title="País"
             value={country}
-            onChange={(value: string) => setCountry(value)}
+            onChange={(value) => setCountry(value)}
           />
           <TextArea
             title="Biografía"
@@ -156,15 +155,17 @@ function SignupForm() {
             type="submit"
             role="primary"
           />
-          {email.length <= 0 && <span>Email debe ser válido</span>}
-          {password.length <= 0 && <span>Debes agregar una contraseña</span>}
-          {(confirmPassword.length <= 0 || confirmPassword !== password) && <span>Debes confirmar tu contraseña correctamente</span>}
-          {name.length <= 0 && <span>Nombre debe ser válido</span>}
-          {lastName.length <= 0 && <span>Apellido debe ser válido</span>}
-          {country.length <= 0 && <span>País debe ser válido</span>}
-          {biography.length <= 0 && <span>Debes incluir una biografía</span>}
-          {skills.length <= 0 && <span>Debes incluir al menos una habilidad</span>}
-          {interests.length <= 0 && <span>Debes incluir al menos un interés</span>}
+          <div className={styles.errorMessages}>
+            {email.length <= 0 && <span>Email debe ser válido</span>}
+            {password.length <= 0 && <span>Debes agregar una contraseña</span>}
+            {(confirmPassword.length <= 0 || confirmPassword !== password) && <span>Debes confirmar tu contraseña correctamente</span>}
+            {name.length <= 0 && <span>Nombre debe ser válido</span>}
+            {lastName.length <= 0 && <span>Apellido debe ser válido</span>}
+            {country.length <= 0 && <span>País debe ser válido</span>}
+            {biography.length <= 0 && <span>Debes incluir una biografía</span>}
+            {skills.length <= 0 && <span>Debes incluir al menos una habilidad</span>}
+            {interests.length <= 0 && <span>Debes incluir al menos un interés</span>}
+          </div>
         </form>
       </div>
     </div>

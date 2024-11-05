@@ -13,7 +13,7 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event) => {
     const userAgent = navigator.userAgent;
     let device = "Desktop";
     if (/Mobi|Android/i.test(userAgent)) {
@@ -40,7 +40,7 @@ function LoginForm() {
           localStorage.setItem("token", result.token);
           router.push("/");
         });
-      })
+      });
     } catch (error) {
       console.error("Error al iniciar sesión: ", error);
     }
@@ -77,7 +77,7 @@ function LoginForm() {
         />
       </form>
       <p className={styles.signupLink}>
-        No tienes una cuenta aún? <Link href="/signup">Registrate aquí</Link>
+        No tienes una cuenta aún? <Link href="/signup">Regístrate aquí</Link>
       </p>
     </div>
   );

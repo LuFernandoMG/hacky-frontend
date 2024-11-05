@@ -1,25 +1,24 @@
-/* src/app/login/styles.module.css */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
-  background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
-  padding: 20px; /* Espacio interno */
   width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #141e30, #243b55); /* Fondo degradado */
 }
 
 .logo {
-  display: flex; /* Ajusta el tamaño del logo según sea necesario */
   margin: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
-  color: #FFF;
-  font-size: 1.8rem; /* Tamaño de fuente más grande */
-  margin: 2rem;
-  text-align: center; /* Centra el texto */
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  text-align: center;
 }
 
 .signupLink {
@@ -27,6 +26,7 @@
   margin-top: 1rem;
   margin-bottom: 3rem;
   font-style: italic;
+  text-align: center;
 }
 
 .signupLink a {
@@ -44,33 +44,108 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 6rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px #50a78d60;
   align-items: center;
+  margin-top: 6rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(80, 167, 141, 0.6);
   border: 1px solid #7d978f;
+  background-color: #1f3249;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 90%; /* Ancho del formulario */
-  max-width: 400px; /* Ancho máximo del formulario */
-}
-
-.logo {
-  /* Estilos para el logo */
-  display: flex; /* Ajusta el tamaño del logo según sea necesario */
-  margin-bottom: 2rem;
+  width: 90%;
+  max-width: 400px;
 }
 
 .agreements {
   display: flex;
+  align-items: center;
   gap: 10px;
   margin-bottom: 20px;
-  color: #50a78d60;
+  color: #50a78d;
+  font-size: 0.9rem;
 }
 
-.agreements div {
-  width: 32px;
+.errorMessages {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.errorMessages span {
+  display: block;
+  margin-top: 5px;
+}
+
+/* Media Queries para Responsive Design */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .formContainer {
+    padding: 1.5rem;
+  }
+
+  .form {
+    max-width: 90%;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    margin: 2rem;
+  }
+
+  .signupLink {
+    margin-bottom: 2rem;
+  }
+
+  .formContainer {
+    margin-top: 4rem;
+    padding: 1rem;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .agreements {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .errorMessages {
+    font-size: 0.8rem;
+  }
+}
+
+/* Pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .formContainer {
+    padding: 0.5rem;
+  }
+
+  .agreements {
+    font-size: 0.8rem;
+  }
+
+  .errorMessages {
+    font-size: 0.75rem;
+  }
 }
