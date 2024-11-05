@@ -1,4 +1,4 @@
-.side-nav {
+.side-nav, .side-nav-active {
     display: flex;
     flex-direction: column;
     padding: 1.5rem 1rem; /* Ajusta el padding para alinearlo mejor */
@@ -54,4 +54,44 @@
     font-size: 1.1rem;
     font-weight: bold;
   }
+
+  .menuButton {
+    display: none;
+  }
   
+  @media screen and (max-width: 768px) {
+
+    .menuButton {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: #1db954;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+
+    .side-nav {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: -100%;
+      background-color: #0a0a0aae;
+      backdrop-filter: blur(5px);
+      transition: all ease-in 0.3s;
+    }
+    
+    .side-nav-active {
+      transition: all ease-in 0.3s;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #0a0a0aae;
+      backdrop-filter: blur(5px);
+    }
+  }
