@@ -66,7 +66,7 @@ function SignupForm() {
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Regístrate</h1>
         <p className={styles.signupLink}>
-          Ya tienes una cuenta? <Link href="/signup">Inicia sesión aquí</Link>
+          Ya tienes una cuenta? <Link href="/login">Inicia sesión aquí</Link>
         </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input
