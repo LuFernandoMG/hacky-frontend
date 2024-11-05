@@ -43,7 +43,6 @@ export default function Invites() {
         },
       ],
       difficulty: "Medium",
-      bounty: 500,
       urls: [],
     },
     {
@@ -82,7 +81,6 @@ export default function Invites() {
         },
       ],
       difficulty: "Hard",
-      bounty: 1000,
       urls: [],
     },
     {
@@ -121,6 +119,7 @@ export default function Invites() {
         },
       ],
       difficulty: "Easy",
+      bounty: 500,
       urls: [],
     },
   ];
