@@ -13,7 +13,7 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const userAgent = navigator.userAgent;
     let device = "Desktop";
     if (/Mobi|Android/i.test(userAgent)) {
