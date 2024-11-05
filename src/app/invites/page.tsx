@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ProjectCard from "@/components/ProjectCard";
@@ -44,7 +44,7 @@ export default function Invites() {
       ],
       difficulty: "Medium",
       bounty: 500,
-      urls: []
+      urls: [],
     },
     {
       id: 2,
@@ -83,7 +83,7 @@ export default function Invites() {
       ],
       difficulty: "Hard",
       bounty: 1000,
-      urls: []
+      urls: [],
     },
     {
       id: 3,
@@ -121,7 +121,7 @@ export default function Invites() {
         },
       ],
       difficulty: "Easy",
-      urls: []
+      urls: [],
     },
   ];
 
@@ -138,14 +138,16 @@ export default function Invites() {
       })
       .catch((error) => {
         console.error(error);
-    });
+      });
   }, []);
 
-  const token = localStorage.getItem("token");
-  if(!token || token === "null" || token === "undefined") {
-    router.push("/login");
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (!token || token === "null" || token === "undefined") {
+      router.push("/login");
 
-    return null;
+      return null;
+    }
   }
 
   return (

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import ProjectCard from "@/components/ProjectCard";
 import { useRouter } from "next/navigation";
 import styles from "./styles.module.css";
@@ -43,10 +43,7 @@ export default function History() {
       ],
       difficulty: "Medium",
       bounty: 500,
-      urls: [
-        'https://www.google.com',
-        'https://www.google.com'
-      ]
+      urls: ["https://www.google.com", "https://www.google.com"],
     },
     {
       id: 2,
@@ -85,10 +82,7 @@ export default function History() {
       ],
       difficulty: "Hard",
       bounty: 1000,
-      urls: [
-        'https://www.google.com',
-        'https://www.google.com'
-      ]
+      urls: ["https://www.google.com", "https://www.google.com"],
     },
     {
       id: 3,
@@ -126,18 +120,17 @@ export default function History() {
         },
       ],
       difficulty: "Easy",
-      urls: [
-        'https://www.google.com',
-        'https://www.google.com'
-      ]
+      urls: ["https://www.google.com", "https://www.google.com"],
     },
   ];
 
-  const token = localStorage.getItem("token");
-  if(!token || token === "null" || token === "undefined") {
-    router.push("/login");
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (!token || token === "null" || token === "undefined") {
+      router.push("/login");
 
-    return null;
+      return null;
+    }
   }
 
   return (

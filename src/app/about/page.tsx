@@ -5,11 +5,13 @@ import { useRouter } from "next/navigation";
 export default function About() {
   const router = useRouter();
 
-  const token = localStorage.getItem("token");
-  if (!token || token === "null" || token === "undefined") {
-    router.push("/login");
-
-    return null;
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem("token");
+    if (!token || token === "null" || token === "undefined") {
+      router.push("/login");
+      
+      return null;
+    }
   }
 
   return (

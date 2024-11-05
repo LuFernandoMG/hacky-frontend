@@ -1,15 +1,17 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
 import styles from "./styles.module.css";
 
 export default function Profile() {
   const router = useRouter();
 
-  const token = localStorage.getItem("token");
-  if(!token || token === "null" || token === "undefined") {
-    router.push("/login");
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (!token || token === "null" || token === "undefined") {
+      router.push("/login");
 
-    return null;
+      return null;
+    }
   }
 
   return (

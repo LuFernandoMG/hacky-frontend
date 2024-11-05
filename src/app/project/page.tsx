@@ -1,7 +1,7 @@
 "use client";
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Modal from '@/components/Modal';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Modal from "@/components/Modal";
 import Pill from "@/components/Pill";
 import Tags from "@/components/Tags";
 import ProjectSteps from "@/components/ProjectSteps";
@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 import Button from "@/components/Button";
 import Message from "@/components/Message";
 import { MdSend } from "react-icons/md";
-import Image from 'next/image';
+import Image from "next/image";
 
 const chatMessages = [
   {
@@ -96,10 +96,10 @@ const chatMessages = [
 ];
 
 export default function Project() {
-  const [messages, setMessages] = useState(chatMessages)
-  const [inputValue, setInputValue] = useState('');
+  const [messages, setMessages] = useState(chatMessages);
+  const [inputValue, setInputValue] = useState("");
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [ready, setReady] = useState<boolean>(false)
+  const [ready, setReady] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -200,40 +200,45 @@ export default function Project() {
     event.preventDefault();
     const date = new Date();
     const timestamp = date.toISOString();
-    setMessages([...messages, {
-      id: messages[messages.length - 1].id + 1,
-      user: {
-        id: 2,
-        name: "John",
-        last_name: "Doe",
-        role: "Frontend developer",
-        email: "john.doe@example.com",
-        avatar: "https://i.pravatar.cc/150?img=60",
+    setMessages([
+      ...messages,
+      {
+        id: messages[messages.length - 1].id + 1,
+        user: {
+          id: 2,
+          name: "John",
+          last_name: "Doe",
+          role: "Frontend developer",
+          email: "john.doe@example.com",
+          avatar: "https://i.pravatar.cc/150?img=60",
+        },
+        message: inputValue,
+        timestamp,
       },
-      message: inputValue,
-      timestamp,
-    },]);
-    setInputValue('');
+    ]);
+    setInputValue("");
   };
 
   const submitProject = () => {
     setShowModal(true);
-  }
+  };
 
   const handleClose = () => {
     setShowModal(false);
     setReady(false);
-  }
+  };
 
   const handleReady = () => {
     setReady(true);
-  }
+  };
 
-  const token = localStorage.getItem("token");
-  if(!token || token === "null" || token === "undefined") {
-    router.push("/login");
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("token");
+    if (!token || token === "null" || token === "undefined") {
+      router.push("/login");
 
-    return null;
+      return null;
+    }
   }
 
   return (
@@ -258,7 +263,12 @@ export default function Project() {
           <p>{project.description}</p>
           <ProjectSteps steps={project.steps} handleChange={onCheckboxChange} />
           <div className={styles.submission}>
-            <Button value="Enviar project" onClick={submitProject} role="primary" type="button" />
+            <Button
+              value="Enviar project"
+              onClick={submitProject}
+              role="primary"
+              type="button"
+            />
           </div>
         </div>
         <div className={styles.rightColumn}>
@@ -290,7 +300,12 @@ export default function Project() {
               </div>
               <form onSubmit={submitMessage}>
                 <div className={styles.chatInput}>
-                  <input value={inputValue} type="text" onChange={e => setInputValue(e.target.value)} placeholder="Type a message..." />
+                  <input
+                    value={inputValue}
+                    type="text"
+                    onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Type a message..."
+                  />
                   <button type="submit">
                     <MdSend />
                   </button>
@@ -300,7 +315,14 @@ export default function Project() {
           </div>
         </div>
       </main>
-      {showModal && <Modal onClose={handleClose} getReady={handleReady} ready={ready} projectId={project.id} />}
+      {showModal && (
+        <Modal
+          onClose={handleClose}
+          getReady={handleReady}
+          ready={ready}
+          projectId={project.id}
+        />
+      )}
     </div>
   );
 }
