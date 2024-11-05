@@ -1,6 +1,7 @@
 'use client'
-import ProjectCard from "@/components/ProjectCard";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import ProjectCard from "@/components/ProjectCard";
 import styles from "./styles.module.css";
 
 export default function Invites() {
@@ -124,6 +125,22 @@ export default function Invites() {
     },
   ];
 
+  useEffect(() => {
+    fetch("https://asterion.casa/api/v1/projects", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+    });
+  }, []);
+
   const token = localStorage.getItem("token");
   if(!token || token === "null" || token === "undefined") {
     router.push("/login");
@@ -138,6 +155,9 @@ export default function Invites() {
         {data.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+        {/* {inviteModal && (
+          <InviteModal 
+        )} */}
       </main>
     </div>
   );
