@@ -1,7 +1,10 @@
+'use client'
 import ProjectCard from "@/components/ProjectCard";
+import { useRouter } from "next/navigation";
 import styles from "./styles.module.css";
 
 export default function Invites() {
+  const router = useRouter();
   const data = [
     {
       id: 1,
@@ -120,6 +123,13 @@ export default function Invites() {
       urls: []
     },
   ];
+
+  const token = localStorage.getItem("token");
+  if(!token || token === "null" || token === "undefined") {
+    router.push("/login");
+
+    return null;
+  }
 
   return (
     <div className={styles.page}>

@@ -15,7 +15,7 @@ import styles from "./styles.module.css";
 function SignupForm() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("Argentina");
   const [biography, setBiography] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [skills, setSkills] = useState<string[]>([]);
@@ -48,12 +48,10 @@ function SignupForm() {
           experience_level: "beginner",
         }),
       }).then((response) => {
-        if (response.ok) {
-          console.log("Usuario registrado con éxito");
-          router.push("/");
-        } else {
-          console.error("Error al registrar el usuario");
-        }
+        const data = response.json();
+        data.then(() => {
+          router.push("/login");
+        });
       });
     } catch (error) {
       console.error("Error al registrar el usuario: ", error);
@@ -154,10 +152,19 @@ function SignupForm() {
               biography.length <= 0 ||
               !checkbox
             }
-            value="Continuar →"
+            value="Registrar →"
             type="submit"
             role="primary"
           />
+          {email.length <= 0 && <span>Email debe ser válido</span>}
+          {password.length <= 0 && <span>Debes agregar una contraseña</span>}
+          {(confirmPassword.length <= 0 || confirmPassword !== password) && <span>Debes confirmar tu contraseña correctamente</span>}
+          {name.length <= 0 && <span>Nombre debe ser válido</span>}
+          {lastName.length <= 0 && <span>Apellido debe ser válido</span>}
+          {country.length <= 0 && <span>País debe ser válido</span>}
+          {biography.length <= 0 && <span>Debes incluir una biografía</span>}
+          {skills.length <= 0 && <span>Debes incluir al menos una habilidad</span>}
+          {interests.length <= 0 && <span>Debes incluir al menos un interés</span>}
         </form>
       </div>
     </div>

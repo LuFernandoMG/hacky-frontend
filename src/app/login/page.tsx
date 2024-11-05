@@ -14,25 +14,32 @@ function LoginForm() {
   const router = useRouter();
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
+    const userAgent = navigator.userAgent;
+    let device = "Desktop";
+    if (/Mobi|Android/i.test(userAgent)) {
+      device = "Mobile";
+    } else if (/Tablet|iPad/i.test(userAgent)) {
+      device = "Tablet";
+    }
+
     event.preventDefault(); // Evita que la página se recargue
     try {
-      fetch("https://asterion.casa/api/v1/login/", {
+      fetch("https://asterion.casa/api/v1/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          email: email.toLowerCase(),
           password,
-          name: 'iphone'
+          name: device,
         }),
       }).then((response) => {
-        if (response.ok) {
-          console.log("Usuario logueado con éxito");
+        const data = response.json();
+        data.then((result) => {
+          localStorage.setItem("token", result.token);
           router.push("/");
-        } else {
-          console.error("Error al iniciar sesión");
-        }
+        });
       })
     } catch (error) {
       console.error("Error al iniciar sesión: ", error);

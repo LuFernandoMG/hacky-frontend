@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Modal from '@/components/Modal';
 import Pill from "@/components/Pill";
 import Tags from "@/components/Tags";
@@ -99,6 +100,8 @@ export default function Project() {
   const [inputValue, setInputValue] = useState('');
   const [showModal, setShowModal] = useState<boolean>(false);
   const [ready, setReady] = useState<boolean>(false)
+
+  const router = useRouter();
 
   const project = {
     id: 1,
@@ -224,6 +227,13 @@ export default function Project() {
 
   const handleReady = () => {
     setReady(true);
+  }
+
+  const token = localStorage.getItem("token");
+  if(!token || token === "null" || token === "undefined") {
+    router.push("/login");
+
+    return null;
   }
 
   return (
