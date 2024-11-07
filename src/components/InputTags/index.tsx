@@ -39,7 +39,7 @@ const InputTags: React.FC<InputTagsProps> = ({
       <label className={styles.label}>{title}</label>
       <span
         className={styles.help}
-      >{`Presiona "Enter" para agregar (Max: ${limit})`}</span>
+      >{`Presiona el botón para agregar (Max: ${limit})`}</span>
       <div className={styles.inputTags}>
         <input
           disabled={tags.length >= limit}
